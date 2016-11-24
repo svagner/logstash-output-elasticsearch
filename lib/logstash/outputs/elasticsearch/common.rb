@@ -5,7 +5,7 @@ module LogStash; module Outputs; class ElasticSearch;
     attr_reader :client, :hosts
 
     RETRYABLE_CODES = [429, 503]
-    SUCCESS_CODES = [200, 201]
+    SUCCESS_CODES = [200, 201, 409]
 
     def register
       @stopping = Concurrent::AtomicBoolean.new(false)
